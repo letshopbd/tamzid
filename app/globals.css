@@ -148,6 +148,8 @@ h4 {
     padding: 0.75rem 1.5rem;
     border-radius: 50px;
     color: white;
+    text-decoration: none;
+    /* Removed underline */
     font-weight: 600;
     cursor: pointer;
     display: flex;
@@ -159,6 +161,10 @@ h4 {
 .cv-btn:hover {
     transform: translateY(-2px);
     box-shadow: 0 10px 30px rgba(99, 102, 241, 0.4);
+}
+
+.mobile-cv-btn {
+    display: none;
 }
 
 /* Sections */
@@ -798,17 +804,216 @@ section {
 
 /* Footer */
 .footer {
-    background: var(--bg-darker);
-    padding: 1.5rem 0;
+    padding: 2rem;
     text-align: center;
+    background: var(--bg-darker);
     border-top: 1px solid rgba(255, 255, 255, 0.1);
-    height: auto;
-    min-height: auto;
-}
-
-.footer p {
     color: var(--text-gray);
     font-size: 0.9rem;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .container {
+        padding: 0 1.5rem;
+    }
+
+    .hero {
+        padding-top: 130px;
+        height: auto;
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .hero-content {
+        display: flex;
+        flex-direction: column-reverse;
+        align-items: center;
+        text-align: center;
+        gap: 2rem;
+    }
+
+    .hero-text {
+        margin: 0 auto;
+        padding-bottom: 2rem;
+        /* Add some bottom padding */
+    }
+
+    .greeting {
+        justify-content: center;
+    }
+
+    .hero-cta {
+        justify-content: center;
+    }
+
+    .hero-image {
+        margin-bottom: 1rem;
+        /* Remove explicit order since we use column-reverse */
+    }
+
+    .projects-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .contact-content {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 768px) {
+    .section-title {
+        font-size: 2rem;
+        margin-bottom: 2rem;
+    }
+
+    .nav-container {
+        padding: 1rem 1.5rem;
+    }
+
+    /* Mobile Navigation */
+    .nav-links {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background: rgba(15, 23, 42, 0.98);
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        flex-direction: column;
+        padding: 1rem;
+        gap: 1rem;
+        backdrop-filter: blur(10px);
+    }
+
+    .nav-links.open {
+        display: flex;
+        animation: slideDown 0.3s ease-out;
+    }
+
+    .nav-link {
+        display: block;
+        padding: 0.75rem;
+        text-align: center;
+        border-radius: 0.5rem;
+    }
+
+    .nav-link:hover,
+    .nav-link.active {
+        background: rgba(255, 255, 255, 0.05);
+    }
+
+    .cv-btn {
+        display: none;
+        /* Hide CV button on mobile menu header */
+    }
+
+    .mobile-cv-btn {
+        display: flex;
+        justify-content: center;
+        margin-top: 0.5rem;
+    }
+
+    .hamburger {
+        display: flex;
+        flex-direction: column;
+        gap: 6px;
+        cursor: pointer;
+        z-index: 1001;
+    }
+
+    .hamburger span {
+        width: 30px;
+        height: 3px;
+        background: white;
+        border-radius: 2px;
+        transition: all 0.3s ease;
+    }
+
+    .hamburger.active span:nth-child(1) {
+        transform: translateY(9px) rotate(45deg);
+    }
+
+    .hamburger.active span:nth-child(2) {
+        opacity: 0;
+    }
+
+    .hamburger.active span:nth-child(3) {
+        transform: translateY(-9px) rotate(-45deg);
+    }
+
+    .image-wrapper {
+        width: 280px;
+        height: 280px;
+    }
+
+    /* Global Section Fixes */
+    section {
+        padding: 4rem 1.5rem;
+        /* Increased padding */
+        height: auto !important;
+        /* Force auto height */
+        min-height: unset;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .container {
+        padding: 0;
+    }
+
+    /* Grid Resets for Mobile */
+    .about-content,
+    .highlights,
+    .skills-grid,
+    .projects-grid,
+    .contact-content {
+        grid-template-columns: 1fr !important;
+        /* Force single column */
+        gap: 2rem;
+    }
+
+    .about-text {
+        text-align: center;
+    }
+
+    .contact-info {
+        order: -1;
+        /* Contact info goes top on mobile */
+        text-align: center;
+        align-items: center;
+    }
+
+    .contact-item {
+        justify-content: center;
+    }
+
+    .contact-form {
+        width: 100%;
+    }
+
+    .contact-form textarea {
+        min-height: 120px;
+    }
+
+    /* Footer Fix */
+    .footer {
+        padding: 2rem 1rem;
+    }
+}
+
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 /* Notification Animations */
@@ -833,139 +1038,5 @@ section {
     to {
         transition: translateX(400px);
         opacity: 0;
-    }
-}
-
-/* Responsive Design */
-
-/* Tablet (max-width: 1024px) */
-@media (max-width: 1024px) {
-    .container {
-        padding: 0 1.5rem;
-    }
-
-    .hero-content {
-        gap: 2rem;
-    }
-
-    .hero-title {
-        font-size: 3rem;
-    }
-
-    .image-wrapper {
-        width: 350px;
-        height: 350px;
-    }
-
-    .highlights {
-        grid-template-columns: repeat(2, 1fr);
-    }
-
-    .skills-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
-
-    .contact-content {
-        gap: 1.5rem;
-    }
-}
-
-/* Mobile (max-width: 768px) */
-@media (max-width: 768px) {
-    .navbar {
-        padding: 0.5rem 0;
-    }
-
-    .nav-container {
-        padding: 1rem 1.5rem;
-    }
-
-    .nav-links {
-        display: none;
-        /* Note: A hamburger menu would be ideal here for a full mobile experience */
-    }
-
-    .hero {
-        padding-top: 100px;
-        height: auto;
-        min-height: 100vh;
-    }
-
-    .hero-content {
-        grid-template-columns: 1fr;
-        text-align: center;
-        gap: 3rem;
-    }
-
-    .hero-text {
-        margin: 0 auto;
-    }
-
-    .greeting {
-        justify-content: center;
-    }
-
-    .hero-cta {
-        justify-content: center;
-    }
-
-    .hero-image {
-        order: -1;
-        margin-bottom: 1rem;
-    }
-
-    .image-wrapper {
-        width: 300px;
-        height: 300px;
-    }
-
-    section {
-        height: auto;
-        padding: 4rem 1rem;
-    }
-
-    .about-content,
-    .skills-grid,
-    .projects-grid,
-    .contact-content {
-        grid-template-columns: 1fr;
-    }
-
-    .highlights {
-        grid-template-columns: 1fr;
-    }
-
-    .contact-content {
-        gap: 2rem;
-    }
-
-    .contact-info {
-        order: -1;
-        /* Show contact info before form on mobile */
-    }
-}
-
-/* Small Mobile (max-width: 480px) */
-@media (max-width: 480px) {
-    .hero-title {
-        font-size: 2.2rem;
-    }
-
-    .hero-subtitle {
-        font-size: 1.1rem;
-    }
-
-    .image-wrapper {
-        width: 260px;
-        height: 260px;
-    }
-
-    .btn {
-        width: 100%;
-        justify-content: center;
-    }
-
-    .section-title {
-        font-size: 2rem;
     }
 }

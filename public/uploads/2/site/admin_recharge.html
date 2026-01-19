@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recharge Requests | Duronto Seba</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+
+<body class="bg-slate-50 flex h-screen overflow-hidden font-sans">
+
+    <!-- Sidebar -->
+    <aside class="w-64 bg-white border-r border-slate-100 flex-shrink-0 hidden md:flex flex-col h-full">
+        <div class="h-16 flex items-center px-6 border-b border-slate-100 flex-shrink-0">
+            <a href="admin_dashboard.html"
+                class="flex items-center gap-2 text-blue-600 font-bold text-xl tracking-tight">
+                <i data-lucide="shield-check" class="w-6 h-6"></i>
+                <span class="bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-indigo-600">
+                    Admin Panel
+                </span>
+            </a>
+        </div>
+
+        <div class="p-4 space-y-1 flex-1 overflow-y-auto">
+            <div class="text-xs font-bold text-slate-400 uppercase tracking-wider px-3 mb-2 mt-4">Management</div>
+
+            <a href="admin_dashboard.html"
+                class="flex items-center gap-3 px-3 py-2.5 rounded-lg transition font-medium text-slate-600 hover:bg-slate-50 hover:text-blue-600">
+                <i data-lucide="layout-dashboard" class="w-4 h-4"></i>
+                Dashboard
+            </a>
+
+            <a href="admin_service_control.html"
+                class="flex items-center gap-3 px-3 py-2.5 rounded-lg transition font-medium text-slate-600 hover:bg-slate-50 hover:text-blue-600">
+                <i data-lucide="server" class="w-4 h-4"></i>
+                Service Control
+            </a>
+
+            <a href="admin_orders.html"
+                class="flex items-center justify-between px-3 py-2.5 rounded-lg transition font-medium text-slate-600 hover:bg-slate-50 hover:text-blue-600">
+                <div class="flex items-center gap-3">
+                    <i data-lucide="file-text" class="w-4 h-4"></i>
+                    Orders
+                </div>
+                <span
+                    class="bg-red-500 text-white text-[10px] font-bold px-1.5 py-0.5 rounded-full min-w-[18px] text-center">3</span>
+            </a>
+
+            <a href="admin_users.html"
+                class="flex items-center gap-3 px-3 py-2.5 rounded-lg transition font-medium text-slate-600 hover:bg-slate-50 hover:text-blue-600">
+                <i data-lucide="users" class="w-4 h-4"></i>
+                Users
+            </a>
+
+            <a href="admin_recharge.html"
+                class="flex items-center justify-between px-3 py-2.5 rounded-lg transition font-medium bg-blue-50 text-blue-600">
+                <div class="flex items-center gap-3">
+                    <i data-lucide="credit-card" class="w-4 h-4"></i>
+                    Recharge Requests
+                </div>
+            </a>
+
+            <a href="admin_settings.html"
+                class="flex items-center gap-3 px-3 py-2.5 rounded-lg transition font-medium text-slate-600 hover:bg-slate-50 hover:text-blue-600">
+                <i data-lucide="settings" class="w-4 h-4"></i>
+                Settings
+            </a>
+        </div>
+
+        <div class="p-4 border-t border-slate-100 flex-shrink-0">
+            <button
+                class="w-full flex items-center justify-center gap-2 py-2 text-slate-500 hover:text-red-600 hover:bg-red-50 rounded-lg transition text-sm font-medium">
+                <i data-lucide="log-out" class="w-4 h-4"></i>
+                Logout
+            </button>
+        </div>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="flex-1 p-4 md:p-8 overflow-y-auto w-full">
+        <header class="mb-8 flex justify-between items-center">
+            <div>
+                <h1 class="text-2xl font-bold text-slate-800">Recharge Requests</h1>
+                <p class="text-slate-500 text-sm">Manage user balance add requests</p>
+            </div>
+            <div class="flex items-center gap-3">
+                <button class="p-2 bg-slate-100 text-slate-600 rounded-lg hover:bg-slate-200 transition"
+                    title="Refresh">
+                    <i data-lucide="refresh-cw" class="w-5 h-5"></i>
+                </button>
+            </div>
+        </header>
+
+        <div class="space-y-6">
+            <div class="bg-white rounded-2xl shadow-sm border border-slate-100 p-6">
+                <div class="overflow-x-auto">
+                    <table class="w-full text-left border-collapse">
+                        <thead>
+                            <tr class="border-b border-slate-100 text-slate-500 text-sm bg-slate-50/50">
+                                <th class="p-4 font-semibold">User</th>
+                                <th class="p-4 font-semibold">Transaction Info</th>
+                                <th class="p-4 font-semibold">Amount</th>
+                                <th class="p-4 font-semibold text-center">Status</th>
+                                <th class="p-4 font-semibold text-right">Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody class="divide-y divide-slate-50">
+                            <!-- Pending Request -->
+                            <tr class="hover:bg-slate-50 transition">
+                                <td class="p-4">
+                                    <div class="font-bold text-slate-700">John Doe</div>
+                                    <div class="text-xs text-slate-400">john@example.com</div>
+                                </td>
+                                <td class="p-4">
+                                    <div class="font-mono font-bold text-slate-700 tracking-wide">TXN123456789</div>
+                                    <div class="flex items-center gap-1 text-xs text-slate-500 mt-1">
+                                        <i data-lucide="smartphone" class="w-3 h-3"></i> 01700000000
+                                    </div>
+                                </td>
+                                <td class="p-4 font-bold text-green-600">
+                                    ৳ 500
+                                </td>
+                                <td class="p-4 text-center">
+                                    <span
+                                        class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-xs font-bold bg-yellow-100 text-yellow-700">
+                                        PENDING
+                                    </span>
+                                </td>
+                                <td class="p-4 text-right">
+                                    <div class="flex items-center justify-end gap-2">
+                                        <button
+                                            class="p-2 bg-green-50 text-green-600 rounded-lg hover:bg-green-100 transition"
+                                            title="Approve">
+                                            <i data-lucide="check-circle" class="w-5 h-5"></i>
+                                        </button>
+                                        <button
+                                            class="p-2 bg-red-50 text-red-600 rounded-lg hover:bg-red-100 transition"
+                                            title="Reject">
+                                            <i data-lucide="x-circle" class="w-5 h-5"></i>
+                                        </button>
+                                    </div>
+                                </td>
+                            </tr>
+
+                            <!-- Approved Request -->
+                            <tr class="hover:bg-slate-50 transition">
+                                <td class="p-4">
+                                    <div class="font-bold text-slate-700">Demo User</div>
+                                    <div class="text-xs text-slate-400">demo@example.com</div>
+                                </td>
+                                <td class="p-4">
+                                    <div class="font-mono font-bold text-slate-700 tracking-wide">TXN987654321</div>
+                                    <div class="flex items-center gap-1 text-xs text-slate-500 mt-1">
+                                        <i data-lucide="smartphone" class="w-3 h-3"></i> 01800000000
+                                    </div>
+                                </td>
+                                <td class="p-4 font-bold text-green-600">
+                                    ৳ 1000
+                                </td>
+                                <td class="p-4 text-center">
+                                    <span
+                                        class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-xs font-bold bg-green-100 text-green-700">
+                                        APPROVED
+                                    </span>
+                                </td>
+                                <td class="p-4 text-right">
+                                    <!-- No actions for approved -->
+                                    <span class="text-xs text-slate-400">Processed</span>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script>
+        lucide.createIcons();
+    </script>
+</body>
+
+</html>

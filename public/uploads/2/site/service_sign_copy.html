@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Copy to NID | Duronto Seba</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+
+<body class="bg-[#f3f4f6] flex h-screen overflow-hidden font-sans">
+
+    <!-- Sidebar -->
+    <aside class="w-64 bg-[#e5e7eb] border-r border-slate-300 hidden md:flex flex-col">
+        <div class="p-4 border-b border-slate-300 flex items-center justify-center">
+            <img src="assets/duronto_logo.png" alt="Duronto Seba" class="object-contain h-12">
+        </div>
+
+        <nav class="flex-1 overflow-y-auto py-4 space-y-1">
+            <a href="dashboard.html"
+                class="flex items-center gap-3 px-4 py-2.5 transition-all text-sm font-medium text-slate-700 hover:bg-slate-200 hover:border-l-4 hover:border-slate-500">
+                <i data-lucide="layout-dashboard" class="w-5 h-5 text-slate-500"></i>
+                Dashboard
+            </a>
+            <a href="#"
+                class="flex items-center gap-3 px-4 py-2.5 transition-all text-sm font-medium text-slate-700 hover:bg-slate-200 hover:border-l-4 hover:border-slate-500">
+                <i data-lucide="shopping-cart" class="w-5 h-5 text-slate-500"></i>
+                Order Now
+            </a>
+            <a href="service_sign_copy.html"
+                class="flex items-center gap-3 px-4 py-2.5 transition-all text-sm font-medium bg-slate-300 border-l-4 border-slate-800 text-slate-900">
+                <i data-lucide="file-text" class="w-5 h-5 text-slate-900"></i>
+                Sign Copy NID
+            </a>
+            <a href="service_birth_reg.html"
+                class="flex items-center gap-3 px-4 py-2.5 transition-all text-sm font-medium text-slate-700 hover:bg-slate-200 hover:border-l-4 hover:border-slate-500">
+                <i data-lucide="file-clock" class="w-5 h-5 text-slate-500"></i>
+                Birth Registration
+            </a>
+            <a href="service_server_copy.html"
+                class="flex items-center gap-3 px-4 py-2.5 transition-all text-sm font-medium text-slate-700 hover:bg-slate-200 hover:border-l-4 hover:border-slate-500">
+                <i data-lucide="upload" class="w-5 h-5 text-slate-500"></i>
+                Server Copy (Unofficial)
+            </a>
+            <a href="service_sign_to_server.html"
+                class="flex items-center gap-3 px-4 py-2.5 transition-all text-sm font-medium text-slate-700 hover:bg-slate-200 hover:border-l-4 hover:border-slate-500">
+                <i data-lucide="file-text" class="w-5 h-5 text-slate-500"></i>
+                Sign to Server Copy
+            </a>
+            <a href="service_tin.html"
+                class="flex items-center gap-3 px-4 py-2.5 transition-all text-sm font-medium text-slate-700 hover:bg-slate-200 hover:border-l-4 hover:border-slate-500">
+                <i data-lucide="calculator" class="w-5 h-5 text-slate-500"></i>
+                TIN Certificate
+            </a>
+            <a href="recharge.html"
+                class="flex items-center gap-3 px-4 py-2.5 transition-all text-sm font-medium text-slate-700 hover:bg-slate-200 hover:border-l-4 hover:border-slate-500">
+                <i data-lucide="credit-card" class="w-5 h-5 text-slate-500"></i>
+                Recharge
+            </a>
+            <a href="profile.html"
+                class="flex items-center gap-3 px-4 py-2.5 transition-all text-sm font-medium text-slate-700 hover:bg-slate-200 hover:border-l-4 hover:border-slate-500">
+                <i data-lucide="user" class="w-5 h-5 text-slate-500"></i>
+                Profile
+            </a>
+        </nav>
+        <div class="p-4 border-t border-slate-300">
+            <a href="index.html"
+                class="flex items-center gap-3 text-red-600 hover:text-red-700 transition font-medium text-sm">
+                <i data-lucide="log-out" class="w-5 h-5"></i>
+                Log Out
+            </a>
+        </div>
+    </aside>
+
+    <!-- Main Content -->
+    <div class="flex-1 flex flex-col h-screen overflow-hidden">
+        <!-- Header -->
+        <header class="bg-white shadow-sm h-16 flex items-center justify-between px-4 md:px-6 sticky top-0 z-10">
+            <div class="md:hidden"><i data-lucide="menu" class="w-6 h-6 text-slate-600"></i></div>
+            <div class="hidden md:block"></div>
+            <div class="flex items-center gap-3 md:gap-6">
+                <div
+                    class="hidden md:flex items-center gap-2 px-3 py-1.5 rounded-full border text-xs font-bold uppercase tracking-wider bg-green-50 text-green-700 border-green-200">
+                    <div class="w-2 h-2 rounded-full bg-green-500"></div><span>Server Status: ON</span>
+                </div>
+                <div
+                    class="px-3 py-1.5 bg-blue-50 rounded-full border border-blue-100 flex items-center gap-2 flex-shrink-0">
+                    <i data-lucide="credit-card" class="w-3.5 h-3.5 md:w-4 md:h-4 text-blue-600 flex-shrink-0"></i>
+                    <span class="text-sm font-bold text-slate-700">৳ 1250.00</span>
+                </div>
+                <div
+                    class="flex items-center gap-3 hover:bg-slate-50 p-1.5 rounded-lg transition-colors cursor-pointer group">
+                    <div
+                        class="w-8 h-8 rounded-full bg-slate-200 overflow-hidden border border-slate-300 flex-shrink-0 group-hover:border-blue-400 transition-colors">
+                        <img src="https://api.dicebear.com/9.x/avataaars/svg?seed=DemoUser" alt="Avatar"
+                            class="w-full h-full object-cover">
+                    </div>
+                    <span
+                        class="text-sm font-medium text-slate-600 hidden md:block group-hover:text-blue-600 transition-colors">Demo
+                        User</span>
+                </div>
+            </div>
+        </header>
+
+        <!-- Service Content -->
+        <main class="flex-1 p-6 overflow-y-auto">
+            <div class="max-w-4xl mx-auto space-y-6">
+                <div>
+                    <h1 class="text-2xl font-bold text-slate-900">New NID</h1>
+                    <p class="text-sm text-slate-500">Create new NID and fill in required information</p>
+                </div>
+
+                <div class="bg-white rounded-xl shadow-sm border border-slate-200 p-6 space-y-8">
+                    <!-- PDF Upload -->
+                    <div
+                        class="border-2 border-dashed border-blue-300 bg-blue-50/50 rounded-xl p-10 flex flex-col items-center justify-center text-center cursor-pointer hover:bg-blue-50 transition group">
+                        <div
+                            class="w-12 h-12 bg-white rounded-full flex items-center justify-center shadow-sm text-blue-500 mb-3 group-hover:scale-110 transition">
+                            <i data-lucide="file-text" class="w-6 h-6"></i>
+                        </div>
+                        <h3 class="text-lg font-bold text-slate-800">Sign Copy</h3>
+                        <p class="text-sm text-slate-500">Click here to upload (PDF only)</p>
+                    </div>
+
+                    <!-- Photo & Signature -->
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <!-- Photo -->
+                        <div class="border border-slate-300 rounded-lg overflow-hidden">
+                            <div
+                                class="h-48 bg-slate-50 flex items-center justify-center border-b border-slate-300 relative">
+                                <span class="absolute top-2 left-2 text-xs font-semibold text-red-500">NID Photo
+                                    *</span>
+                                <i data-lucide="user" class="w-16 h-16 text-slate-300"></i>
+                            </div>
+                            <div class="p-3 bg-white flex items-center justify-between">
+                                <button
+                                    class="flex items-center gap-2 text-xs font-semibold text-slate-600 border border-slate-300 rounded px-3 py-1.5 hover:bg-slate-50">
+                                    <i data-lucide="upload" class="w-3 h-3"></i> Choose File
+                                </button>
+                                <span class="text-xs text-slate-400">No file chosen</span>
+                            </div>
+                        </div>
+                        <!-- Signature -->
+                        <div class="border border-slate-300 rounded-lg overflow-hidden">
+                            <div
+                                class="h-48 bg-slate-50 flex items-center justify-center border-b border-slate-300 relative">
+                                <span
+                                    class="absolute top-2 left-2 text-xs font-semibold text-slate-600">Signature</span>
+                                <i data-lucide="pen-tool" class="w-16 h-16 text-slate-300"></i>
+                            </div>
+                            <div class="p-3 bg-white flex items-center justify-between">
+                                <button
+                                    class="flex items-center gap-2 text-xs font-semibold text-slate-600 border border-slate-300 rounded px-3 py-1.5 hover:bg-slate-50">
+                                    <i data-lucide="upload" class="w-3 h-3"></i> Choose File
+                                </button>
+                                <span class="text-xs text-slate-400">No file chosen</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Form Fields -->
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div class="space-y-2">
+                            <label class="text-sm font-semibold text-slate-700">Name (Bangla) *</label>
+                            <input type="text" placeholder="Full Name in Bangla"
+                                class="w-full px-4 py-2.5 rounded-lg border border-slate-300 focus:outline-none focus:border-green-500 focus:ring-1 focus:ring-green-500 text-sm">
+                        </div>
+                        <div class="space-y-2">
+                            <label class="text-sm font-semibold text-slate-700">Name (English) *</label>
+                            <input type="text" placeholder="Full Name in English"
+                                class="w-full px-4 py-2.5 rounded-lg border border-slate-300 focus:outline-none focus:border-green-500 focus:ring-1 focus:ring-green-500 text-sm">
+                        </div>
+
+                        <div class="space-y-2">
+                            <label class="text-sm font-semibold text-slate-700">NID Number *</label>
+                            <input type="text" placeholder="NID Number"
+                                class="w-full px-4 py-2.5 rounded-lg border border-slate-300 focus:outline-none focus:border-green-500 focus:ring-1 focus:ring-green-500 text-sm">
+                        </div>
+                        <div class="space-y-2">
+                            <label class="text-sm font-semibold text-slate-700">PIN Number *</label>
+                            <input type="text" placeholder="PIN Number"
+                                class="w-full px-4 py-2.5 rounded-lg border border-slate-300 focus:outline-none focus:border-green-500 focus:ring-1 focus:ring-green-500 text-sm">
+                        </div>
+
+                        <div class="space-y-2">
+                            <label class="text-sm font-semibold text-slate-700">Father's Name *</label>
+                            <input type="text" placeholder="Father's Name in Bangla"
+                                class="w-full px-4 py-2.5 rounded-lg border border-slate-300 focus:outline-none focus:border-green-500 focus:ring-1 focus:ring-green-500 text-sm">
+                        </div>
+                        <div class="space-y-2">
+                            <label class="text-sm font-semibold text-slate-700">Mother's Name *</label>
+                            <input type="text" placeholder="Mother's Name in Bangla"
+                                class="w-full px-4 py-2.5 rounded-lg border border-slate-300 focus:outline-none focus:border-green-500 focus:ring-1 focus:ring-green-500 text-sm">
+                        </div>
+
+                        <div class="space-y-2">
+                            <label class="text-sm font-semibold text-slate-700">Place of Birth *</label>
+                            <input type="text" placeholder="Place of Birth (District)"
+                                class="w-full px-4 py-2.5 rounded-lg border border-slate-300 focus:outline-none focus:border-green-500 focus:ring-1 focus:ring-green-500 text-sm">
+                        </div>
+                        <div class="space-y-2">
+                            <label class="text-sm font-semibold text-slate-700">Date of Birth *</label>
+                            <input type="date"
+                                class="w-full px-4 py-2.5 rounded-lg border border-slate-300 focus:outline-none focus:border-green-500 focus:ring-1 focus:ring-green-500 text-sm">
+                        </div>
+                    </div>
+
+                    <div class="space-y-2">
+                        <label class="text-sm font-semibold text-slate-700">Address *</label>
+                        <textarea rows="3"
+                            placeholder="House/Holding: (Holding), Village/Road: (Village, Road), Post Office: (Post Office-Postal Code), Upazila, City Corporation/Municipality, District"
+                            class="w-full px-4 py-2.5 rounded-lg border border-slate-300 focus:outline-none focus:border-green-500 focus:ring-1 focus:ring-green-500 text-sm resize-none"></textarea>
+                    </div>
+                </div>
+
+                <button
+                    class="w-full py-4 bg-[#00c988] text-white font-bold rounded-lg hover:bg-[#00b57a] transition shadow-md flex items-center justify-center gap-2">
+                    <i data-lucide="download" class="w-5 h-5"></i>
+                    Create & Download NID
+                </button>
+            </div>
+        </main>
+    </div>
+
+    <script>
+        lucide.createIcons();
+    </script>
+</body>
+
+</html>

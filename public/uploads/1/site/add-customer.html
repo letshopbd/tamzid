@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add New Customer - Dokan Baki Manager</title>
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="app-container">
+        <!-- Navbar -->
+        <nav class="navbar">
+            <div class="container navbar-content">
+                <a href="index.html" class="brand-link">
+                    <div class="brand-icon">
+                        <i data-lucide="layout-dashboard"></i>
+                    </div>
+                    <span class="brand-text">Dokan Baki</span>
+                </a>
+
+                <div class="nav-links">
+                    <a href="index.html" class="nav-item">
+                        <i data-lucide="layout-dashboard" class="icon-sm"></i>
+                        <span>Dashboard</span>
+                    </a>
+                    <a href="customers.html" class="nav-item active">
+                        <i data-lucide="users" class="icon-sm"></i>
+                        <span>Customers</span>
+                    </a>
+                    <a href="add-baki.html" class="nav-item">
+                        <i data-lucide="plus-circle" class="icon-sm"></i>
+                        <span>Add Baki</span>
+                    </a>
+                    <a href="add-porishodh.html" class="nav-item">
+                        <i data-lucide="minus-circle" class="icon-sm"></i>
+                        <span>Add Porishodh</span>
+                    </a>
+                    <button class="logout-btn">
+                        <i data-lucide="log-out" class="icon-sm"></i>
+                    </button>
+                </div>
+            </div>
+        </nav>
+
+        <!-- Main Content -->
+        <main class="main-content container">
+            <div class="max-w-xl mx-auto">
+                <a href="customers.html" class="back-link">
+                    <i data-lucide="arrow-left" class="icon-xs"></i>
+                    Back to Customers
+                </a>
+
+                <div class="form-card">
+                    <div class="form-header">
+                        <i data-lucide="user-plus" class="form-header-icon"></i>
+                        <h1 class="form-title">Add New Customer</h1>
+                    </div>
+
+                    <form class="form-body">
+                        <div class="form-group">
+                            <label class="form-label">Customer Name</label>
+                            <input type="text" class="form-input" placeholder="Enter full name" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="form-label">Mobile Number (Optional)</label>
+                            <input type="tel" class="form-input" placeholder="Enter mobile number">
+                        </div>
+
+                        <button type="submit" class="submit-btn indigo">
+                            <i data-lucide="save" class="icon-sm"></i>
+                            Save Customer
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+    <script>
+        lucide.createIcons();
+    </script>
+</body>
+
+</html>

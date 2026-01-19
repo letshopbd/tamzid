@@ -2,10 +2,13 @@
 
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [activeLink, setActiveLink] = useState('home');
+  const [isOpen, setIsOpen] = useState(false);
+  const pathname = usePathname();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -31,8 +34,6 @@ export default function Navbar() {
 
       if (current) {
         setActiveLink(current);
-        // Optional: Update URL without jumping
-        // window.history.replaceState(null, null, `#${current}`);
       }
     };
 
@@ -40,24 +41,33 @@ export default function Navbar() {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  const toggleMenu = () => {
+    setIsOpen(!isOpen);
+  };
+
   const handleNavClick = (e, id) => {
-    e.preventDefault();
-    const element = document.getElementById(id);
-    if (element) {
-      const offset = 80; // Adjust for fixed navbar height
-      const bodyRect = document.body.getBoundingClientRect().top;
-      const elementRect = element.getBoundingClientRect().top;
-      const elementPosition = elementRect - bodyRect;
-      const offsetPosition = elementPosition - offset;
+    setIsOpen(false); // Close menu on click
 
-      window.scrollTo({
-        top: offsetPosition,
-        behavior: 'smooth'
-      });
+    if (pathname === '/') {
+      e.preventDefault();
+      const element = document.getElementById(id);
+      if (element) {
+        const offset = 80; // Adjust for fixed navbar height
+        const bodyRect = document.body.getBoundingClientRect().top;
+        const elementRect = element.getBoundingClientRect().top;
+        const elementPosition = elementRect - bodyRect;
+        const offsetPosition = elementPosition - offset;
 
-      setActiveLink(id);
-      window.history.pushState(null, null, `#${id}`);
+        window.scrollTo({
+          top: offsetPosition,
+          behavior: 'smooth'
+        });
+
+        setActiveLink(id);
+        window.history.pushState(null, null, `#${id}`);
+      }
     }
+    // If not on home page, let the default Link behavior take over (navigates to /#id)
   };
 
   return (
@@ -70,26 +80,51 @@ export default function Navbar() {
       }}
     >
       <div className="nav-container">
-        <div className="logo">
-          <span className="logo-text">Tamzid</span>
-          <span className="logo-dot">.</span>
+        <div className="logo" style={{ zIndex: 1002 }}>
+          <Link href="/" className="logo-text" style={{ textDecoration: 'none', color: 'inherit' }}>
+            Tamzid<span className="logo-dot">.</span>
+          </Link>
         </div>
-        <div className="nav-links">
+
+        {/* Hamburger Menu */}
+        <div className={`hamburger ${isOpen ? 'active' : ''}`} onClick={toggleMenu}>
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+
+        <div className={`nav-links ${isOpen ? 'open' : ''}`}>
           {['home', 'about', 'skills', 'projects', 'contact'].map((item) => (
-            <a
+            <Link
               key={item}
-              href={`#${item}`}
+              href={`/#${item}`}
               className={`nav-link ${activeLink === item ? 'active' : ''}`}
               onClick={(e) => handleNavClick(e, item)}
             >
               {item.charAt(0).toUpperCase() + item.slice(1).replace('contact', 'Contact US')}
-            </a>
+            </Link>
           ))}
+
+          {/* Mobile Only CV Button */}
+          <div className="mobile-cv-btn">
+            <a
+              href="/images/cv.pdf"
+              download="S_M_Tamzid_Huda_CV.pdf"
+              className="cv-btn"
+              style={{ display: 'flex' }} // Force display in mobile menu
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <span>Download CV</span>
+            </a>
+          </div>
         </div>
+
+        {/* Desktop Only CV Button */}
         <a
           href="/images/cv.pdf"
           download="S_M_Tamzid_Huda_CV.pdf"
-          className="cv-btn"
+          className="cv-btn desktop-only"
           target="_blank"
           rel="noopener noreferrer"
           style={{ textDecoration: 'none' }}

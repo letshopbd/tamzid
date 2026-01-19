@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>All Customers - Dokan Baki Manager</title>
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="app-container">
+        <!-- Navbar -->
+        <nav class="navbar">
+            <div class="container navbar-content">
+                <a href="index.html" class="brand-link">
+                    <div class="brand-icon">
+                        <i data-lucide="layout-dashboard"></i>
+                    </div>
+                    <span class="brand-text">Dokan Baki</span>
+                </a>
+
+                <div class="nav-links">
+                    <a href="index.html" class="nav-item">
+                        <i data-lucide="layout-dashboard" class="icon-sm"></i>
+                        <span>Dashboard</span>
+                    </a>
+                    <a href="customers.html" class="nav-item active">
+                        <i data-lucide="users" class="icon-sm"></i>
+                        <span>Customers</span>
+                    </a>
+                    <a href="add-baki.html" class="nav-item">
+                        <i data-lucide="plus-circle" class="icon-sm"></i>
+                        <span>Add Baki</span>
+                    </a>
+                    <a href="add-porishodh.html" class="nav-item">
+                        <i data-lucide="minus-circle" class="icon-sm"></i>
+                        <span>Add Porishodh</span>
+                    </a>
+                    <button class="logout-btn">
+                        <i data-lucide="log-out" class="icon-sm"></i>
+                    </button>
+                </div>
+            </div>
+        </nav>
+
+        <!-- Main Content -->
+        <main class="main-content container">
+            <div class="page-header flex-header">
+                <h1 class="page-title">All Customers</h1>
+                <a href="add-customer.html" class="primary-btn">
+                    <i data-lucide="plus" class="icon-sm"></i>
+                    <span>Add New Customer</span>
+                </a>
+            </div>
+
+            <!-- Search -->
+            <div class="search-container">
+                <i data-lucide="search" class="search-icon"></i>
+                <input type="text" placeholder="Search by name or phone..." class="search-input">
+            </div>
+
+            <!-- Customers List -->
+            <div class="card-container">
+                <div class="list-divide">
+                    <!-- Customer Item 1 -->
+                    <div class="customer-item">
+                        <div class="customer-info">
+                            <div class="avatar-circle">R</div>
+                            <div>
+                                <h4 class="customer-name">Rahim Store</h4>
+                                <div class="customer-meta">
+                                    <i data-lucide="phone" class="icon-xs"></i>
+                                    01712345678
+                                </div>
+                                <a href="#" class="view-details-btn">View Details</a>
+                            </div>
+                        </div>
+                        <div class="customer-balance">
+                            <p class="balance-label">Current Due</p>
+                            <p class="balance-amount text-red">৳ 12,500</p>
+                        </div>
+                    </div>
+
+                    <!-- Customer Item 2 -->
+                    <div class="customer-item">
+                        <div class="customer-info">
+                            <div class="avatar-circle">K</div>
+                            <div>
+                                <h4 class="customer-name">Karim Bhai</h4>
+                                <div class="customer-meta">
+                                    <i data-lucide="phone" class="icon-xs"></i>
+                                    01812345678
+                                </div>
+                                <a href="#" class="view-details-btn">View Details</a>
+                            </div>
+                        </div>
+                        <div class="customer-balance">
+                            <p class="balance-label">Current Due</p>
+                            <p class="balance-amount text-red">৳ 5,200</p>
+                        </div>
+                    </div>
+
+                    <!-- Customer Item 3 -->
+                    <div class="customer-item">
+                        <div class="customer-info">
+                            <div class="avatar-circle">J</div>
+                            <div>
+                                <h4 class="customer-name">Jamal Uddin</h4>
+                                <div class="customer-meta">
+                                    <i data-lucide="phone" class="icon-xs"></i>
+                                    01912345678
+                                </div>
+                                <a href="#" class="view-details-btn">View Details</a>
+                            </div>
+                        </div>
+                        <div class="customer-balance">
+                            <p class="balance-label">Current Due</p>
+                            <p class="balance-amount text-green">৳ 0</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+    <script>
+        lucide.createIcons();
+    </script>
+</body>
+
+</html>

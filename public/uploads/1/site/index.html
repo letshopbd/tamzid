@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dokan Baki Manager</title>
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="app-container">
+        <!-- Navbar -->
+        <nav class="navbar">
+            <div class="container navbar-content">
+                <a href="index.html" class="brand-link">
+                    <div class="brand-icon">
+                        <i data-lucide="layout-dashboard"></i>
+                    </div>
+                    <span class="brand-text">Dokan Baki</span>
+                </a>
+
+                <div class="nav-links">
+                    <a href="index.html" class="nav-item active">
+                        <i data-lucide="layout-dashboard" class="icon-sm"></i>
+                        <span>Dashboard</span>
+                    </a>
+                    <a href="customers.html" class="nav-item">
+                        <i data-lucide="users" class="icon-sm"></i>
+                        <span>Customers</span>
+                    </a>
+                    <a href="add-baki.html" class="nav-item">
+                        <i data-lucide="plus-circle" class="icon-sm"></i>
+                        <span>Add Baki</span>
+                    </a>
+                    <a href="add-porishodh.html" class="nav-item">
+                        <i data-lucide="minus-circle" class="icon-sm"></i>
+                        <span>Add Porishodh</span>
+                    </a>
+                    <button class="logout-btn">
+                        <i data-lucide="log-out" class="icon-sm"></i>
+                    </button>
+                </div>
+            </div>
+        </nav>
+
+        <!-- Main Content -->
+        <main class="main-content container">
+            <header class="page-header">
+                <h1 class="page-title">Dashboard Overview</h1>
+                <p class="page-subtitle">Welcome back!</p>
+            </header>
+
+            <!-- Stats Grid -->
+            <div class="stats-grid">
+                <!-- Total Customers -->
+                <div class="stat-card">
+                    <div class="stat-icon-wrapper blue">
+                        <i data-lucide="users" class="icon-md"></i>
+                    </div>
+                    <div>
+                        <p class="stat-label">Total Customers</p>
+                        <p class="stat-value counter" data-target="124">0</p>
+                    </div>
+                </div>
+
+                <!-- Total Due -->
+                <div class="stat-card">
+                    <div class="stat-icon-wrapper red">
+                        <i data-lucide="dollar-sign" class="icon-md"></i>
+                    </div>
+                    <div>
+                        <p class="stat-label">Total Market Due</p>
+                        <p class="stat-value">৳ <span class="counter" data-target="45250">0</span></p>
+                    </div>
+                </div>
+
+                <!-- Total Paid -->
+                <div class="stat-card">
+                    <div class="stat-icon-wrapper emerald">
+                        <i data-lucide="trending-up" class="icon-md"></i>
+                    </div>
+                    <div>
+                        <p class="stat-label">Total Porishodh</p>
+                        <p class="stat-value">৳ <span class="counter" data-target="128400">0</span></p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Chart Section -->
+            <div class="chart-section">
+                <h2 class="chart-title">Monthly Baki vs Porishodh</h2>
+                <div class="chart-container">
+                    <canvas id="mainChart"></canvas>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <!-- Custom JS -->
+    <script src="script.js"></script>
+    <script>
+        // Initialize Lucide Icons
+        lucide.createIcons();
+    </script>
+</body>
+
+</html>

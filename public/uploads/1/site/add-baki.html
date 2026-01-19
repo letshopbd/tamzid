@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add New Baki - Dokan Baki Manager</title>
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="app-container">
+        <!-- Navbar -->
+        <nav class="navbar">
+            <div class="container navbar-content">
+                <a href="index.html" class="brand-link">
+                    <div class="brand-icon">
+                        <i data-lucide="layout-dashboard"></i>
+                    </div>
+                    <span class="brand-text">Dokan Baki</span>
+                </a>
+
+                <div class="nav-links">
+                    <a href="index.html" class="nav-item">
+                        <i data-lucide="layout-dashboard" class="icon-sm"></i>
+                        <span>Dashboard</span>
+                    </a>
+                    <a href="customers.html" class="nav-item">
+                        <i data-lucide="users" class="icon-sm"></i>
+                        <span>Customers</span>
+                    </a>
+                    <a href="add-baki.html" class="nav-item active">
+                        <i data-lucide="plus-circle" class="icon-sm"></i>
+                        <span>Add Baki</span>
+                    </a>
+                    <a href="add-porishodh.html" class="nav-item">
+                        <i data-lucide="minus-circle" class="icon-sm"></i>
+                        <span>Add Porishodh</span>
+                    </a>
+                    <button class="logout-btn">
+                        <i data-lucide="log-out" class="icon-sm"></i>
+                    </button>
+                </div>
+            </div>
+        </nav>
+
+        <!-- Main Content -->
+        <main class="main-content container">
+            <div class="max-w-2xl mx-auto">
+                <a href="customers.html" class="back-link">
+                    <i data-lucide="arrow-left" class="icon-xs"></i>
+                    Back to Customers
+                </a>
+
+                <div class="form-card">
+                    <div class="form-header bg-gray-50">
+                        <div>
+                            <h1 class="form-title">Add New Baki</h1>
+                            <p class="form-subtitle">Select a customer and add their due details</p>
+                        </div>
+                    </div>
+
+                    <form class="form-body">
+                        <!-- Customer Select -->
+                        <div class="form-group">
+                            <label class="form-label input-icon-label">
+                                <i data-lucide="user" class="icon-xs"></i> Select Customer
+                            </label>
+                            <div class="select-wrapper">
+                                <select class="form-input" required>
+                                    <option value="">-- Choose a Customer --</option>
+                                    <option value="1">Rahim Store (01712345678)</option>
+                                    <option value="2">Karim Bhai (01812345678)</option>
+                                    <option value="3">Jamal Uddin (01912345678)</option>
+                                </select>
+                                <i data-lucide="chevron-down" class="select-arrow"></i>
+                            </div>
+                        </div>
+
+                        <!-- Date Time -->
+                        <div class="grid-2">
+                            <div class="form-group">
+                                <label class="form-label input-icon-label">
+                                    <i data-lucide="calendar" class="icon-xs"></i> Date
+                                </label>
+                                <input type="date" class="form-input focus-red" value="2026-01-19">
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label input-icon-label">
+                                    <i data-lucide="clock" class="icon-xs"></i> Time
+                                </label>
+                                <input type="time" class="form-input focus-red" value="10:30">
+                            </div>
+                        </div>
+
+                        <!-- Items Section -->
+                        <div class="items-section">
+                            <label class="form-label">Items (Products)</label>
+
+                            <div class="item-row">
+                                <input type="text" class="form-input focus-red"
+                                    placeholder="Item Name (e.g. Rice, Oil)">
+                                <input type="number" class="form-input focus-red text-right w-32" placeholder="Price">
+                                <button type="button" class="icon-btn-danger" disabled>
+                                    <i data-lucide="trash-2" class="icon-sm"></i>
+                                </button>
+                            </div>
+
+                            <button type="button" class="add-item-link">
+                                <i data-lucide="plus" class="icon-xs"></i> Add Another Item
+                            </button>
+                        </div>
+
+                        <!-- Total -->
+                        <div class="total-box-red">
+                            <span>Total Baki Amount</span>
+                            <span class="total-amount">৳ 0</span>
+                        </div>
+
+                        <button type="submit" class="submit-btn red">
+                            <i data-lucide="save" class="icon-sm"></i>
+                            Save Baki Record
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+    <script>
+        lucide.createIcons();
+    </script>
+</body>
+
+</html>

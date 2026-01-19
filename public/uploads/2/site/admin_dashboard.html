@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard | Duronto Seba</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+
+<body class="bg-slate-50 flex h-screen overflow-hidden font-sans">
+
+    <!-- Sidebar -->
+    <aside class="w-64 bg-white border-r border-slate-100 flex-shrink-0 hidden md:flex flex-col h-full">
+        <div class="h-16 flex items-center px-6 border-b border-slate-100 flex-shrink-0">
+            <a href="admin_dashboard.html"
+                class="flex items-center gap-2 text-blue-600 font-bold text-xl tracking-tight">
+                <i data-lucide="shield-check" class="w-6 h-6"></i>
+                <span class="bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-indigo-600">
+                    Admin Panel
+                </span>
+            </a>
+        </div>
+
+        <div class="p-4 space-y-1 flex-1 overflow-y-auto">
+            <div class="text-xs font-bold text-slate-400 uppercase tracking-wider px-3 mb-2 mt-4">Management</div>
+
+            <a href="admin_dashboard.html"
+                class="flex items-center gap-3 px-3 py-2.5 rounded-lg transition font-medium bg-blue-50 text-blue-600">
+                <i data-lucide="layout-dashboard" class="w-4 h-4"></i>
+                Dashboard
+            </a>
+
+            <a href="admin_service_control.html"
+                class="flex items-center gap-3 px-3 py-2.5 rounded-lg transition font-medium text-slate-600 hover:bg-slate-50 hover:text-blue-600">
+                <i data-lucide="server" class="w-4 h-4"></i>
+                Service Control
+            </a>
+
+            <a href="admin_orders.html"
+                class="flex items-center justify-between px-3 py-2.5 rounded-lg transition font-medium text-slate-600 hover:bg-slate-50 hover:text-blue-600">
+                <div class="flex items-center gap-3">
+                    <i data-lucide="file-text" class="w-4 h-4"></i>
+                    Orders
+                </div>
+                <span
+                    class="bg-red-500 text-white text-[10px] font-bold px-1.5 py-0.5 rounded-full min-w-[18px] text-center">3</span>
+            </a>
+
+            <a href="admin_users.html"
+                class="flex items-center gap-3 px-3 py-2.5 rounded-lg transition font-medium text-slate-600 hover:bg-slate-50 hover:text-blue-600">
+                <i data-lucide="users" class="w-4 h-4"></i>
+                Users
+            </a>
+
+            <a href="admin_recharge.html"
+                class="flex items-center justify-between px-3 py-2.5 rounded-lg transition font-medium text-slate-600 hover:bg-slate-50 hover:text-blue-600">
+                <div class="flex items-center gap-3">
+                    <i data-lucide="credit-card" class="w-4 h-4"></i>
+                    Recharge Requests
+                </div>
+            </a>
+
+            <a href="admin_settings.html"
+                class="flex items-center gap-3 px-3 py-2.5 rounded-lg transition font-medium text-slate-600 hover:bg-slate-50 hover:text-blue-600">
+                <i data-lucide="settings" class="w-4 h-4"></i>
+                Settings
+            </a>
+        </div>
+
+        <div class="p-4 border-t border-slate-100 flex-shrink-0">
+            <button
+                class="w-full flex items-center justify-center gap-2 py-2 text-slate-500 hover:text-red-600 hover:bg-red-50 rounded-lg transition text-sm font-medium">
+                <i data-lucide="log-out" class="w-4 h-4"></i>
+                Logout
+            </button>
+        </div>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="flex-1 p-4 md:p-8 overflow-y-auto w-full">
+        <!-- Admin Header (Simple) -->
+        <header class="mb-8 flex justify-between items-center">
+            <div>
+                <h1 class="text-2xl font-bold text-slate-800">Admin Overview</h1>
+                <p class="text-slate-500 text-sm">Manage your platform</p>
+            </div>
+            <div class="flex items-center gap-3">
+                <div
+                    class="w-10 h-10 rounded-full bg-blue-100 flex items-center justify-center text-blue-600 font-bold">
+                    A
+                </div>
+            </div>
+        </header>
+
+        <div class="space-y-8">
+            <!-- Cloud Storage Dashboard Section -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div
+                    class="md:col-span-2 bg-gradient-to-r from-blue-600 to-indigo-600 rounded-2xl p-8 text-white shadow-xl relative overflow-hidden transition-all hover:shadow-2xl hover:shadow-blue-500/20">
+                    <div class="relative z-10">
+                        <div class="flex items-center justify-between mb-6">
+                            <div>
+                                <h2 class="text-2xl font-bold mb-1 flex items-center gap-2">
+                                    Cloud Storage Status
+                                </h2>
+                                <p class="text-blue-100 opacity-90 text-sm">UploadThing Secure Storage</p>
+                            </div>
+                            <div class="bg-white/10 p-3 rounded-full backdrop-blur-sm border border-white/10">
+                                <i data-lucide="database" class="w-6 h-6 text-white"></i>
+                            </div>
+                        </div>
+
+                        <!-- Storage Progress -->
+                        <div class="mb-6">
+                            <div class="flex justify-between items-end mb-2">
+                                <span class="text-4xl font-bold text-white tracking-tight">
+                                    450.5 MB
+                                </span>
+                                <span class="text-blue-100 opacity-80 font-medium mb-1">
+                                    / 2 GB
+                                </span>
+                            </div>
+
+                            <div class="w-full bg-black/20 rounded-full h-3 overflow-hidden backdrop-blur-sm">
+                                <div class="bg-white h-full rounded-full transition-all duration-1000 ease-out relative shadow-[0_0_10px_rgba(255,255,255,0.5)]"
+                                    style="width: 22%">
+                                    <div class="absolute inset-0 bg-white/30 animate-pulse"></div>
+                                </div>
+                            </div>
+
+                            <div class="flex justify-between mt-2 text-xs font-medium text-blue-100">
+                                <span>22% Used</span>
+                                <span class="opacity-80">Total Capacity</span>
+                            </div>
+                        </div>
+
+                        <!-- Quick Stats Grid within Card -->
+                        <div class="grid grid-cols-2 gap-4 mt-8">
+                            <div
+                                class="bg-white/10 rounded-xl p-4 border border-white/10 backdrop-blur-md hover:bg-white/15 transition duration-300">
+                                <div class="text-blue-100 text-xs mb-1 uppercase tracking-wider font-bold opacity-80">
+                                    Total Files</div>
+                                <div class="text-xl font-bold text-white flex items-center gap-2">
+                                    <i data-lucide="file-text" class="w-4 h-4 text-emerald-300"></i>
+                                    1,234
+                                </div>
+                            </div>
+                            <div
+                                class="bg-white/10 rounded-xl p-4 border border-white/10 backdrop-blur-md hover:bg-white/15 transition duration-300">
+                                <div class="text-blue-100 text-xs mb-1 uppercase tracking-wider font-bold opacity-80">
+                                    Plan Status</div>
+                                <div class="text-xl font-bold text-emerald-300 flex items-center gap-2">
+                                    <i data-lucide="shield" class="w-4 h-4"></i>
+                                    Active
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right Side - Quick Actions -->
+                <div class="space-y-4">
+                    <div
+                        class="bg-white p-6 rounded-2xl border border-slate-100 shadow-sm h-full flex flex-col justify-center">
+                        <h3 class="font-bold text-slate-800 mb-4">Quick Management</h3>
+                        <div class="space-y-3">
+                            <a href="#"
+                                class="flex items-center justify-between p-3 rounded-xl bg-slate-50 hover:bg-blue-50 hover:text-blue-600 transition group">
+                                <span class="text-sm font-medium">Manage Orders</span>
+                                <i data-lucide="arrow-right"
+                                    class="w-4 h-4 text-slate-400 group-hover:text-blue-500"></i>
+                            </a>
+                            <a href="#"
+                                class="flex items-center justify-between p-3 rounded-xl bg-slate-50 hover:bg-emerald-50 hover:text-emerald-600 transition group">
+                                <span class="text-sm font-medium">Recharge Requests</span>
+                                <i data-lucide="arrow-right"
+                                    class="w-4 h-4 text-slate-400 group-hover:text-emerald-500"></i>
+                            </a>
+                            <a href="#"
+                                class="flex items-center justify-between p-3 rounded-xl bg-slate-50 hover:bg-purple-50 hover:text-purple-600 transition group">
+                                <span class="text-sm font-medium">Service Fees</span>
+                                <i data-lucide="arrow-right"
+                                    class="w-4 h-4 text-slate-400 group-hover:text-purple-500"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Stats Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-6">
+                <!-- Total Users -->
+                <div
+                    class="bg-white p-6 rounded-xl border border-slate-100 shadow-sm hover:shadow-md transition-shadow">
+                    <div class="flex items-center justify-between mb-4">
+                        <div class="bg-indigo-50 p-3 rounded-lg">
+                            <i data-lucide="users" class="w-6 h-6 text-indigo-600"></i>
+                        </div>
+                    </div>
+                    <div>
+                        <h3 class="text-slate-500 text-sm font-medium mb-1">Total Users</h3>
+                        <p class="text-2xl font-bold text-slate-800">5,432</p>
+                    </div>
+                </div>
+
+                <!-- Total Orders -->
+                <div
+                    class="bg-white p-6 rounded-xl border border-slate-100 shadow-sm hover:shadow-md transition-shadow">
+                    <div class="flex items-center justify-between mb-4">
+                        <div class="bg-blue-50 p-3 rounded-lg">
+                            <i data-lucide="file-text" class="w-6 h-6 text-blue-600"></i>
+                        </div>
+                    </div>
+                    <div>
+                        <h3 class="text-slate-500 text-sm font-medium mb-1">Total Orders</h3>
+                        <p class="text-2xl font-bold text-slate-800">12,500</p>
+                    </div>
+                </div>
+
+                <!-- Pending -->
+                <div
+                    class="bg-white p-6 rounded-xl border border-slate-100 shadow-sm hover:shadow-md transition-shadow">
+                    <div class="flex items-center justify-between mb-4">
+                        <div class="bg-orange-50 p-3 rounded-lg">
+                            <i data-lucide="server" class="w-6 h-6 text-orange-600"></i>
+                        </div>
+                    </div>
+                    <div>
+                        <h3 class="text-slate-500 text-sm font-medium mb-1">Pending Orders</h3>
+                        <p class="text-2xl font-bold text-slate-800">45</p>
+                    </div>
+                </div>
+
+                <!-- Revenue -->
+                <div
+                    class="bg-white p-6 rounded-xl border border-slate-100 shadow-sm hover:shadow-md transition-shadow">
+                    <div class="flex items-center justify-between mb-4">
+                        <div class="bg-green-50 p-3 rounded-lg">
+                            <i data-lucide="trending-up" class="w-6 h-6 text-green-600"></i>
+                        </div>
+                    </div>
+                    <div>
+                        <h3 class="text-slate-500 text-sm font-medium mb-1">Total Revenue</h3>
+                        <p class="text-2xl font-bold text-slate-800">৳ 1,23,450</p>
+                    </div>
+                </div>
+
+                <!-- Cancelled -->
+                <div
+                    class="bg-white p-6 rounded-xl border border-slate-100 shadow-sm hover:shadow-md transition-shadow">
+                    <div class="flex items-center justify-between mb-4">
+                        <div class="bg-red-50 p-3 rounded-lg">
+                            <i data-lucide="x-circle" class="w-6 h-6 text-red-600"></i>
+                        </div>
+                    </div>
+                    <div>
+                        <h3 class="text-slate-500 text-sm font-medium mb-1">Cancelled</h3>
+                        <p class="text-2xl font-bold text-slate-800">120</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script>
+        lucide.createIcons();
+    </script>
+</body>
+
+</html>

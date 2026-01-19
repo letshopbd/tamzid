@@ -1,4 +1,29 @@
+'use client';
+
+import { useState, useEffect } from 'react';
+import Link from 'next/link';
+
 export default function Projects() {
+    const [projects, setProjects] = useState([]);
+    const [isLoading, setIsLoading] = useState(true);
+
+    useEffect(() => {
+        const fetchProjects = async () => {
+            try {
+                const res = await fetch('/api/projects');
+                const data = await res.json();
+                // Limit to first 4 for display
+                setProjects(data.slice(0, 4));
+            } catch (error) {
+                console.error('Failed to fetch projects', error);
+            } finally {
+                setIsLoading(false);
+            }
+        };
+
+        fetchProjects();
+    }, []);
+
     return (
         <section className="projects" id="projects">
             <div className="container">
@@ -6,35 +31,35 @@ export default function Projects() {
                     <span className="section-tag">My Work</span>
                     <h2 className="section-title">Featured Projects</h2>
                 </div>
-                <div className="projects-grid">
-                    <div className="project-card">
-                        <div className="project-img">
-                            <img src="https://images.unsplash.com/photo-1677442136019-21780ecad995?w=600&h=400&fit=crop"
-                                alt="AI Project" />
-                        </div>
-                        <div className="project-content">
-                            <div className="tags">
-                                <span>AI</span>
-                                <span>Web App</span>
+
+                {isLoading ? (
+                    <p style={{ textAlign: 'center', color: 'var(--text-gray)' }}>Loading data...</p>
+                ) : (
+                    <div className="projects-grid">
+                        {projects.map((project) => (
+                            <div key={project.id} className="project-card">
+                                <div className="project-img">
+                                    <img src={project.image} alt={project.title} loading="lazy" />
+                                </div>
+                                <div className="project-content">
+                                    <div style={{ marginBottom: '0.5rem' }}></div>
+                                    <h3>{project.title}</h3>
+                                    <p>{project.description}</p>
+                                    {project.demoLink && (
+                                        <a href={project.demoLink} target="_blank" rel="noopener noreferrer" style={{ display: 'inline-block', marginTop: '0.5rem', color: '#6366f1', fontSize: '0.9rem' }}>
+                                            Live Demo &rarr;
+                                        </a>
+                                    )}
+                                </div>
                             </div>
-                            <h3>AI-Powered Web Application</h3>
-                            <p>Smart web app using AI for enhanced user experience</p>
-                        </div>
+                        ))}
                     </div>
-                    <div className="project-card">
-                        <div className="project-img">
-                            <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=600&h=400&fit=crop"
-                                alt="Marketing Project" />
-                        </div>
-                        <div className="project-content">
-                            <div className="tags">
-                                <span>Marketing</span>
-                                <span>Analytics</span>
-                            </div>
-                            <h3>Digital Marketing Campaign</h3>
-                            <p>Data-driven campaign with measurable results</p>
-                        </div>
-                    </div>
+                )}
+
+                <div style={{ textAlign: 'center', marginTop: '3rem' }}>
+                    <Link href="/projects" className="btn btn-primary">
+                        View All Projects
+                    </Link>
                 </div>
             </div>
         </section>

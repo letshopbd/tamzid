@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Orders Management | Duronto Seba</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+
+<body class="bg-slate-50 flex h-screen overflow-hidden font-sans">
+
+    <!-- Sidebar -->
+    <aside class="w-64 bg-white border-r border-slate-100 flex-shrink-0 hidden md:flex flex-col h-full">
+        <div class="h-16 flex items-center px-6 border-b border-slate-100 flex-shrink-0">
+            <a href="admin_dashboard.html"
+                class="flex items-center gap-2 text-blue-600 font-bold text-xl tracking-tight">
+                <i data-lucide="shield-check" class="w-6 h-6"></i>
+                <span class="bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-indigo-600">
+                    Admin Panel
+                </span>
+            </a>
+        </div>
+
+        <div class="p-4 space-y-1 flex-1 overflow-y-auto">
+            <div class="text-xs font-bold text-slate-400 uppercase tracking-wider px-3 mb-2 mt-4">Management</div>
+
+            <a href="admin_dashboard.html"
+                class="flex items-center gap-3 px-3 py-2.5 rounded-lg transition font-medium text-slate-600 hover:bg-slate-50 hover:text-blue-600">
+                <i data-lucide="layout-dashboard" class="w-4 h-4"></i>
+                Dashboard
+            </a>
+
+            <a href="admin_service_control.html"
+                class="flex items-center gap-3 px-3 py-2.5 rounded-lg transition font-medium text-slate-600 hover:bg-slate-50 hover:text-blue-600">
+                <i data-lucide="server" class="w-4 h-4"></i>
+                Service Control
+            </a>
+
+            <a href="admin_orders.html"
+                class="flex items-center justify-between px-3 py-2.5 rounded-lg transition font-medium bg-blue-50 text-blue-600">
+                <div class="flex items-center gap-3">
+                    <i data-lucide="file-text" class="w-4 h-4"></i>
+                    Orders
+                </div>
+                <span
+                    class="bg-red-500 text-white text-[10px] font-bold px-1.5 py-0.5 rounded-full min-w-[18px] text-center">3</span>
+            </a>
+
+            <a href="admin_users.html"
+                class="flex items-center gap-3 px-3 py-2.5 rounded-lg transition font-medium text-slate-600 hover:bg-slate-50 hover:text-blue-600">
+                <i data-lucide="users" class="w-4 h-4"></i>
+                Users
+            </a>
+
+            <a href="admin_recharge.html"
+                class="flex items-center justify-between px-3 py-2.5 rounded-lg transition font-medium text-slate-600 hover:bg-slate-50 hover:text-blue-600">
+                <div class="flex items-center gap-3">
+                    <i data-lucide="credit-card" class="w-4 h-4"></i>
+                    Recharge Requests
+                </div>
+            </a>
+
+            <a href="admin_settings.html"
+                class="flex items-center gap-3 px-3 py-2.5 rounded-lg transition font-medium text-slate-600 hover:bg-slate-50 hover:text-blue-600">
+                <i data-lucide="settings" class="w-4 h-4"></i>
+                Settings
+            </a>
+        </div>
+
+        <div class="p-4 border-t border-slate-100 flex-shrink-0">
+            <button
+                class="w-full flex items-center justify-center gap-2 py-2 text-slate-500 hover:text-red-600 hover:bg-red-50 rounded-lg transition text-sm font-medium">
+                <i data-lucide="log-out" class="w-4 h-4"></i>
+                Logout
+            </button>
+        </div>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="flex-1 p-4 md:p-8 overflow-y-auto w-full">
+        <header class="mb-8 flex justify-between items-center">
+            <div>
+                <h1 class="text-2xl font-bold text-slate-800">Orders Management</h1>
+                <p class="text-slate-500 text-sm">Track and manage customer requests</p>
+            </div>
+            <span class="px-3 py-1 bg-blue-50 text-blue-600 rounded-full text-sm font-bold">
+                Total Orders: 5
+            </span>
+        </header>
+
+        <div class="space-y-6">
+            <div class="bg-white rounded-2xl shadow-sm border border-slate-100 p-6">
+                <div class="overflow-x-auto">
+                    <table class="w-full text-left border-collapse">
+                        <thead>
+                            <tr class="border-b border-slate-100 text-slate-500 text-sm uppercase bg-slate-50">
+                                <th class="px-4 py-3 font-semibold text-xs tracking-wider">User</th>
+                                <th class="px-4 py-3 font-semibold text-xs tracking-wider">Request Details</th>
+                                <th class="px-4 py-3 font-semibold text-xs tracking-wider">Status</th>
+                                <th class="px-4 py-3 font-semibold text-xs tracking-wider">Fee</th>
+                                <th class="px-4 py-3 font-semibold text-xs tracking-wider">Manage Order</th>
+                            </tr>
+                        </thead>
+                        <tbody class="divide-y divide-slate-100">
+                            <!-- Pending Order -->
+                            <tr class="hover:bg-slate-50 transition">
+                                <td class="px-4 py-3 align-top max-w-[140px]">
+                                    <div class="font-bold text-slate-800 text-sm">John Doe</div>
+                                    <div class="text-xs text-slate-500">john@example.com</div>
+                                </td>
+                                <td class="px-4 py-3 align-top">
+                                    <div class="flex items-center gap-1.5 text-slate-700">
+                                        <i data-lucide="file-text" class="w-3.5 h-3.5 text-slate-400"></i>
+                                        <span class="font-mono text-xs font-bold">8293746192</span>
+                                    </div>
+                                    <div class="text-xs text-slate-500 mt-1">DOB: 1995-05-12</div>
+                                </td>
+                                <td class="px-4 py-3 align-top">
+                                    <span
+                                        class="px-2 py-0.5 rounded-full text-[10px] font-bold border border-amber-200 bg-amber-100 text-amber-700">
+                                        PENDING
+                                    </span>
+                                </td>
+                                <td class="px-4 py-3 text-sm font-bold text-slate-700 align-top">৳150</td>
+                                <td class="px-4 py-3 align-top">
+                                    <div class="flex flex-col gap-2 max-w-sm">
+                                        <div class="bg-slate-50 p-1.5 rounded-lg border border-slate-200 flex gap-2">
+                                            <select class="p-1 text-xs bg-white border border-slate-200 rounded">
+                                                <option>Pending</option>
+                                                <option>Processing</option>
+                                                <option>Completed</option>
+                                            </select>
+                                            <button
+                                                class="flex-1 flex items-center justify-center gap-1 px-2 py-1 bg-white border border-slate-300 rounded text-slate-500 text-xs hover:border-blue-400 hover:text-blue-600 transition">
+                                                <i data-lucide="upload" class="w-3 h-3"></i> Upload
+                                            </button>
+                                        </div>
+                                        <button
+                                            class="w-full flex items-center justify-center gap-2 py-1.5 bg-gradient-to-r from-blue-500 to-indigo-600 text-white rounded-lg text-xs font-bold shadow-sm">
+                                            <i data-lucide="play-circle" class="w-3 h-3"></i> Auto Verify
+                                        </button>
+                                    </div>
+                                </td>
+                            </tr>
+
+                            <!-- Completed Order -->
+                            <tr class="hover:bg-slate-50 transition">
+                                <td class="px-4 py-3 align-top max-w-[140px]">
+                                    <div class="font-bold text-slate-800 text-sm">Demo User</div>
+                                    <div class="text-xs text-slate-500">demo@example.com</div>
+                                </td>
+                                <td class="px-4 py-3 align-top">
+                                    <div class="flex items-center gap-1.5 text-slate-700">
+                                        <i data-lucide="file-text" class="w-3.5 h-3.5 text-slate-400"></i>
+                                        <span class="font-mono text-xs font-bold">1987346123</span>
+                                    </div>
+                                    <div class="text-xs text-slate-500 mt-1">DOB: 1987-11-20</div>
+                                </td>
+                                <td class="px-4 py-3 align-top">
+                                    <span
+                                        class="px-2 py-0.5 rounded-full text-[10px] font-bold border border-green-200 bg-green-100 text-green-700">
+                                        COMPLETED
+                                    </span>
+                                    <div class="mt-1 text-[10px] text-green-600 font-medium flex items-center gap-1">
+                                        <i data-lucide="check-circle" class="w-3 h-3"></i> Attached
+                                    </div>
+                                </td>
+                                <td class="px-4 py-3 text-sm font-bold text-slate-700 align-top">৳150</td>
+                                <td class="px-4 py-3 align-top">
+                                    <div class="flex flex-col gap-2 max-w-sm">
+                                        <div class="bg-slate-50 p-1.5 rounded-lg border border-slate-200 flex gap-2">
+                                            <select class="p-1 text-xs bg-white border border-slate-200 rounded">
+                                                <option>Completed</option>
+                                                <option>Pending</option>
+                                            </select>
+                                            <a href="#"
+                                                class="flex-1 flex items-center justify-center gap-1 px-2 py-1 bg-green-50 border border-green-200 rounded text-green-700 text-xs">
+                                                <i data-lucide="eye" class="w-3 h-3"></i> View
+                                            </a>
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script>
+        lucide.createIcons();
+    </script>
+</body>
+
+</html>

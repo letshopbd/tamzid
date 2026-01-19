@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Account | Duronto Seba</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+
+<body class="min-h-screen flex flex-col antialiased font-sans">
+    <main class="flex-1 gradient-bg relative overflow-hidden">
+        <div class="min-h-[calc(100vh-80px)] flex items-center justify-center p-4">
+            <div class="max-w-md w-full glass bg-white/90 rounded-2xl shadow-xl p-8 space-y-6">
+                <div class="text-center">
+                    <h1 class="text-2xl font-bold text-slate-800">Create Account</h1>
+                    <p class="text-slate-500 text-sm">Join Duronto Seba</p>
+                </div>
+
+                <form action="login.html" class="space-y-4">
+                    <div class="space-y-1">
+                        <label class="text-sm font-semibold text-slate-700">Full Name</label>
+                        <div class="relative">
+                            <i data-lucide="user" class="absolute left-3 top-3.5 w-4 h-4 text-slate-400"></i>
+                            <input type="text"
+                                class="w-full pl-10 pr-4 py-3 rounded-xl border border-slate-200 focus:border-blue-500 focus:ring-2 focus:ring-blue-200 outline-none transition"
+                                placeholder="John Doe" required />
+                        </div>
+                    </div>
+
+                    <div class="space-y-1">
+                        <label class="text-sm font-semibold text-slate-700">Email Address</label>
+                        <div class="relative">
+                            <i data-lucide="mail" class="absolute left-3 top-3.5 w-4 h-4 text-slate-400"></i>
+                            <input type="email"
+                                class="w-full pl-10 pr-4 py-3 rounded-xl border border-slate-200 focus:border-blue-500 focus:ring-2 focus:ring-blue-200 outline-none transition"
+                                placeholder="you@example.com" required />
+                        </div>
+                    </div>
+
+                    <div class="space-y-1">
+                        <label class="text-sm font-semibold text-slate-700">Password</label>
+                        <div class="relative">
+                            <i data-lucide="lock" class="absolute left-3 top-3.5 w-4 h-4 text-slate-400"></i>
+                            <input type="password" id="password"
+                                class="w-full pl-10 pr-12 py-3 rounded-xl border border-slate-200 focus:border-blue-500 focus:ring-2 focus:ring-blue-200 outline-none transition"
+                                placeholder="••••••••" required />
+                            <button type="button" onclick="togglePassword()"
+                                class="absolute right-3 top-3.5 text-slate-400 hover:text-slate-600 focus:outline-none">
+                                <i data-lucide="eye" class="w-4 h-4"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="flex items-start gap-2">
+                        <input type="checkbox" id="terms"
+                            class="mt-1 w-4 h-4 rounded border-gray-300 text-blue-600 focus:ring-blue-500" required />
+                        <label htmlFor="terms" class="text-sm text-slate-600">
+                            I agree to the <a href="#" class="text-blue-600 font-bold hover:underline">Terms and
+                                Conditions</a>
+                        </label>
+                    </div>
+
+                    <button type="submit"
+                        class="w-full py-3 bg-blue-600 hover:bg-blue-700 text-white rounded-xl font-bold shadow-lg transition disabled:opacity-70 disabled:cursor-not-allowed">
+                        Register
+                    </button>
+                </form>
+
+                <div class="text-center text-sm text-slate-500">
+                    Already have an account?
+                    <a href="login.html" class="text-blue-600 font-bold hover:underline">
+                        Log In
+                    </a>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script>
+        lucide.createIcons();
+
+        function togglePassword() {
+            const passwordInput = document.getElementById('password');
+            if (passwordInput.type === 'password') {
+                passwordInput.type = 'text';
+            } else {
+                passwordInput.type = 'password';
+            }
+        }
+    </script>
+</body>
+
+</html>
